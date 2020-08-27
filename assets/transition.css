@@ -1,0 +1,22 @@
+.pages-enter {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  .pages-enter-active,
+  .pages-leave-active,.left-tab-enter-active,.left-tab-leave-active,.right-tab-enter-active,.right-tab-leave-active {
+    transition:all 0.15s linear;
+  }
+  .pages-leave-to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  .left-tab-enter, .right-tab-leave-to{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  .right-tab-enter, .left-tab-leave-to{
+    opacity: 0;
+    transform: translateX(50px);
+  }

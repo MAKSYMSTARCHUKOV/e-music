@@ -1,0 +1,72 @@
+@import '~/assets/_defaults.scss';
+.mode {
+  @include my(40);
+  @include mx(0);
+  label {
+    width: 100%;
+    @include tablet() {
+      width: auto;
+    }
+    &:first-child {
+      margin-right: 8px;
+      @include tablet() {
+        margin-right: 20px;
+      }
+    }
+    .check-item {
+      text-transform: uppercase;
+    }
+  }
+}
+.tabs {
+  .tab {
+    margin-top: 20px;
+    &.login {
+      .v-form {
+        background-color: white;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+        @include tablet() {
+          max-width: 500px;
+          padding: 30px 60px;
+        }
+      }
+    }
+    &.register {
+      flex-direction: column;
+      @include tablet() {
+        flex-direction: row;
+      }
+      .role-form {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        padding: 10px;
+        background-color: white;
+        @include tablet() {
+          padding: 30px 60px;
+          border-radius: 0 10px 10px 0;
+        }
+        .role {
+          display: grid;
+          row-gap: 10px;
+          column-gap: 20px;
+          grid-template-columns: 1fr;
+          @include tablet() {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+      }
+    }
+    .v-form {
+      .v-btn {
+        @include px(60);
+        width: 100%;
+        @include tablet() {
+          width: auto;
+        }
+      }
+    }
+  }
+}

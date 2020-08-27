@@ -1,0 +1,28 @@
+@import '~/assets/_defaults.scss';
+.paging {
+  justify-content: center;
+  margin-top: 86px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  .gs-page {
+    @include mx(5);
+    margin-bottom: 5px;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    padding: 2.5px 7px;
+    border: 2px solid transparent;
+    @include flow(0.15);
+    &:hover:not(.active) {
+      background-color: $info;
+      @include flow(0.15);
+    }
+    &.active {
+      border-color: $info;
+      @include flow(0.15);
+    }
+    &.after{
+        cursor: pointer;
+    }
+  }
+}

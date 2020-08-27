@@ -1,0 +1,213 @@
+@import '~/assets/_defaults.scss';
+.headers {
+  margin-top: 60px;
+  @include tablet() {
+    margin-top: 80px;
+  }
+}
+@include white-layer() {
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    @include tablet() {
+      grid-template-columns: 210px 1fr;
+      column-gap: 20px;
+    }
+    @include screen() {
+      grid-template-columns: 300px 1fr;
+      column-gap: 30px;
+    }
+    img {
+      width: 100%;
+    }    
+    .info-box {
+      overflow: hidden;
+      #nick {
+        padding: 0;
+        font-size: rem(18);
+        font-weight: 800;
+        text-align: left;
+        position: relative;
+        @include tablet() {
+          font-size: rem(20);
+        }
+        @include screen() {
+          font-size: rem(33);
+        }        
+      }
+      #name{
+        padding: 0;
+        font-size: rem(16);
+        font-weight: 800;
+        text-align: left;
+        position: relative;
+        @include tablet() {
+          font-size: rem(18);
+        }
+        @include screen() {
+          font-size: rem(30);
+        }        
+      }
+      #review{
+        font-size: rem(14);
+        line-height: 20px;
+        text-indent: 36px;
+        font-weight: 300;
+      }
+      #settle {
+        font-size: rem(14);
+        font-weight: 500;
+      }
+      #edit{
+        position: absolute;
+        top: 0;
+        right: 0;
+        img{
+          height: 28px;
+          width: auto;
+        }
+      }
+      .spec-content {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .mus,
+  .event,
+  .bands {
+    .m-card {
+      height: 380px;
+      @include tablet() {
+        height: 310px;
+      }
+      @include screen() {
+        height: 450px;
+      }
+    }
+  }
+  .photo,
+  .video {
+    .photo-content,
+    .video-content {
+      .photo-item,
+      .video-item {
+        height: 100px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        border: none;
+        @include tablet() {
+          height: 115px;
+        }
+        @include screen() {
+          height: 130px;
+        }
+      }
+    }
+  }
+  .swiper-slide.video-slide{
+    position: relative;
+    .video-shield{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+  .extra {
+    .nav-button {
+      height: 24px;
+      width: auto;
+      outline: none;
+      &.left-nav {
+        transform: rotate(90deg);
+      }
+      &.right-nav {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  .audio{
+      .audio-content{
+          .song{
+              &:first-child{
+                  margin-top: 0 !important;
+              }
+              .manipulate-button{
+                  height: 17px;
+                  width: auto;
+                  @include tablet(){
+                      height: 32px;
+                  }
+              }
+              .audio-title{
+                  font-size: rem(14);
+                  font-weight: 300;
+                  white-space: nowrap;
+                  overflow-x: hidden;
+                  text-overflow: ellipsis;
+                  @include tablet(){
+                      font-size: rem(16);
+                  }
+              }
+          }
+      }
+  }
+  .social{
+      .social-content{
+        margin-right: auto;
+          a{
+              margin-left: 20px;
+              line-height: 0;
+              @include tablet(){
+                  margin-left: 30px;
+              }
+              img{
+                  height: 23px;
+                  @include tablet(){
+                      height: 32px;
+                  }
+              }
+          }
+      }
+  }
+  .rider{
+    .rider-content{
+        .rider-item{
+            .rider-title{
+                font-weight: 500;
+            }
+            .rider-items{
+                margin-left: 10px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+.price{
+    .price-content{
+        flex-wrap: wrap;
+        justify-content: center;
+        @include tablet(){
+          justify-content: start;
+        }
+        .price-item{
+            .pill{
+               color: white;
+               font-size: rem(16);
+               font-weight: 600; 
+               padding: 11px 30px;
+               white-space: nowrap;
+            }
+            .price-title{
+                font-size: rem(10);
+                font-weight: 300;
+            }
+        }
+    }
+    
+}
+}

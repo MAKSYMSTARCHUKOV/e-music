@@ -1,0 +1,149 @@
+@import '~/assets/_defaults.scss';
+.m-calendar {
+  position: relative;
+  *{
+      color: black;
+  }
+  .m-tooltip{
+      border-radius:10px;
+      padding: 8px 10px;
+      background-color: $primary;
+      box-shadow:2px 2px 8px grey;
+      position: absolute;  
+      z-index: 9999;    
+      &-caption{
+          color: white;
+          margin-bottom: 5px;
+          font-size: rem(12);
+          font-weight: bold;
+      }
+      &-body{
+          a,b{
+            color: white;    
+          }
+          color: white;
+          img{
+              width: 30px;
+              margin-left: 5px;
+              flex-shrink: 0;
+              cursor: pointer;              
+          }   
+          span{
+              color: white;
+          }       
+          .__input{
+            height: 35px;
+            padding: 0 5px;
+            text-align: right;
+            color: white;
+            width: 110px;
+          }
+          .reason{
+            position: relative;
+            &:hover{
+                .reason-box{
+                    opacity: 1;
+                    visibility: visible;
+                    @include flow;
+                }
+              }
+            .reason-box{
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                bottom: -60px;
+                right: 0;
+                width: 80px;
+                height: 70px;
+                background-color: $primary;
+                border:2px solid white;
+                border-radius: 10px;
+                @include flow;
+                span{
+                    cursor: pointer;
+                    padding: 8px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: rem(12);
+                    @include flow(0.15);
+                    &:hover{
+                        @include flow(0.15);
+                        color: $info;
+                    }
+                }
+            }
+          }
+          .price{
+              color: white;
+          }
+      }
+  }
+  .nav-buttons{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9998;
+      img{
+          height: 24px;
+          outline: none;
+          &.left-nav{
+            transform: rotate(90deg);
+          }
+          &.right-nav{
+            transform: rotate(-90deg);
+          }
+      }
+  }
+  .calendar-item{
+      padding: 0 5px 5px;
+  }
+  .calendar-month{
+      text-align: center;
+      font-size: rem(16);
+      font-weight: 600;
+  }
+  .calendar-days{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 20px 12px;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.22);
+    .day{
+        grid-column-end: span 1;
+        text-align: center;
+        &.waiting{
+            background-color: #ffea3b;
+        }
+        &.approved{
+            background-color: #16c408;
+            color: white;
+        }
+        &.expired{
+            background-color: #b3b3b3 !important;
+            color: white;
+        }
+        &.pending{
+            border-color:$info;
+            @include flow;
+        }
+    }
+    .days{
+        font-weight: 600;
+    }    
+    .regular{
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        @include my(2);
+        border:1px solid transparent;
+        @include flow;
+    }
+    .weekend{
+        color: $yellow;
+    }
+  }
+}

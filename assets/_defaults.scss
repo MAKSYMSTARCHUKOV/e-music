@@ -1,0 +1,226 @@
+@import '~/assets/variables.scss';
+@import '~/static/scss/_mix.scss';
+
+@include width;
+
+*{
+  box-sizing: border-box !important;
+  letter-spacing: 0.03rem;
+}
+
+a{
+  text-decoration: none;
+  outline: none !important;
+  color: inherit;
+  &:visited{
+    color: inherit;
+  }
+}
+
+img{    
+    &.icon{
+      height: 32px;
+      width: auto;
+    }
+    &.icon__main{
+      height: 41px;
+      width: auto;
+    }
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.d-opaq{
+  opacity: 0 !important;
+  visibility: hidden !important;
+  @include flow;
+}
+
+h1{
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+    &.red-title{
+      color: $info;
+      font-size: rem(32);
+      @include tablet(){
+        font-size: rem(48);
+      };
+      @include screen(){
+        font-size: rem(67);
+      };
+    }
+    &.footer{
+      color: $info;
+      text-align: left;
+      font-size: rem(16);
+    }
+}
+
+.flex-line{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &-center{
+    justify-content: center;
+  }
+}
+
+
+.flex-break{
+  height: 0;
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.text-red{
+  color: $info;
+}
+
+.flex-basis-50{
+    flex-basis: 50%;
+}
+
+.flex-basis-100{
+    flex-basis: 100%;
+}
+
+.media-select{
+  display: flex;
+  align-items: center;
+  .circle{
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 1px solid $primary;
+  }
+  &-caption{
+      margin-left: 14px;
+  }
+  [type="checkbox"] ~ .circle,[type="radio"] ~ .circle{
+          background-color: white;
+          @include flow;
+      }
+  [type="checkbox"]:checked ~  .circle,[type="radio"]:checked ~  .circle{
+          background-color: $info;
+          @include flow;
+      }
+}
+
+.v-toolbar{
+  z-index: 10000 !important;
+}
+
+.v-toolbar__content,
+.responsive,
+main, footer, .template {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  @include tablet() {
+    padding-left: 135px !important;
+    padding-right: 135px !important;
+  }
+}
+
+.v-input__control {
+  height: 56px;
+}
+.v-input__slot {
+  margin-bottom: 0;
+}
+
+.__input {
+  outline: none;
+  background-color: #3b3b3b;
+  padding-left: 15px;
+  height: 56px;
+  &::placeholder {
+    color: white;
+  }
+  &-grey{
+    background-color: $light-grey;
+    &::placeholder {
+      color: black;
+    } 
+  }
+}
+
+label {
+  cursor: pointer;
+  .check-item {
+    background-color: $grey;
+    color: black;
+    padding: 20px;
+    font-weight: 600;
+    text-align: center;
+    @include flow;
+  }
+  .media-chip{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: $light-grey;
+    white-space: nowrap;
+    font-weight: 300;
+    @include tablet(){
+        width: 100%;
+    }
+}
+  [type='radio']:checked ~ .check-item {
+    @include flow;
+    background-color: $info;
+    color: white;
+  }
+}
+
+.v-label {
+  color: white !important;
+  z-index: 1;
+}
+
+.v-select__slot{
+  label.v-label{
+    color: white !important;
+  }
+}
+
+.v-text-field--outlined.v-input--is-focused fieldset,
+.v-text-field--outlined:not(.v-input--is-focused) fieldset,
+.v-text-field__slot,
+.__input {
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+  width: 100%;
+}
+
+.v-list {
+    padding: 20px 50px !important;
+  }
+  
+  main {
+    margin-top: 60px;
+  }
+  .border-radius {
+    border-radius: 10px;
+  }
+  
+  .row,
+  .col {
+    padding: 0;
+  }
+
+  .v-btn:not(.v-btn--router){
+      height: auto !important;
+      text-transform: none;
+      font-weight: 600;
+      padding: 20px;
+  }
+
+  p{
+    text-indent: 35px;
+  }
